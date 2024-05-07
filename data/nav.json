@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Главная",
+    "link": "/",
+    "id": 0
+  },
+  {
+    "title": "Каталог",
+    "link": "catalogue",
+    "id": 1
+  },
+  {
+    "title": "Магазин",
+    "link": "shop",
+    "id": 2
+  },
+  {
+    "title": "Спорт",
+    "link": "sport",
+    "id": 3
+  },
+  {
+    "title": "ТВ Каналы",
+    "link": "tv",
+    "id": 4
+  },
+  {
+    "title": "Детям",
+    "link": "kids",
+    "id": 5
+  }
+]

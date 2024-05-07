@@ -1,0 +1,77 @@
+:root {
+  --qwe-: #ccc;
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('./assets/font/Montserrat-VariableFont_wght.ttf');
+}
+
+body {
+  background-color: #131313;
+  font-family: 'montserrat';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notActive {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+
+  nav,
+  .navmenu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #c5c5c5;
+      transition: 0.25s ease all;
+
+      &:hover {
+        color: #d4d4d4;
+      }
+    }
+    img {
+      width: 100px;
+    }
+
+    .searchField {
+      input {
+        padding: 0.7rem 2rem;
+        background: none;
+        border: none;
+        width: 100%;
+        color: white;
+      }
+    }
+  }
+
+  .search {
+    svg {
+      margin-inline: 0.5rem;
+      color: #acacac90;
+    }
+
+    .searchBtn {
+      cursor: pointer;
+      transition: all 0.25s ease;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
