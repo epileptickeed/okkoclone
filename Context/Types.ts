@@ -5,6 +5,7 @@ export type ContextType = {
   searchActive: boolean;
   dispatch: Dispatch<UnknownAction>;
   setSearchActive: ActionCreatorWithPayload<any, 'nav/setSearchActive'>;
+  moviesData: any[];
 
   inputRef: React.MutableRefObject<HTMLInputElement | null>;
   handleInputVisible: () => void;

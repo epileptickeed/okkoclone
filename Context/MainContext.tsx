@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { setSearchActive } from '../redux/Slices/Nav/NavSlices';
 import { ContextType } from './Types';
+import { setMovies } from '../redux/Slices/Movie/movieSlices';
+import { MovieSelector } from '../redux/Slices/Movie/selector';
+import movies from '../data/movies.json';
 
 const Context = createContext({} as ContextType);
 
@@ -13,6 +16,9 @@ type ChildrenType = {
 export const MainContext = ({ children }: ChildrenType) => {
   const dispatch = useDispatch();
   const searchActive = useSelector((state: RootState) => state.nav.searchActive);
+
+  const { moviesData } = useSelector(MovieSelector);
+  dispatch(setMovies(movies));
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const handleInputVisible = () => {
@@ -31,6 +37,7 @@ export const MainContext = ({ children }: ChildrenType) => {
         setSearchActive,
         dispatch,
         inputRef,
+        moviesData,
       }}>
       {children}
     </Context.Provider>
