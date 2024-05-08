@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header className="navbar">
-      <nav className="links">
+      <nav className={searchActive ? 'linksActive' : 'links'}>
         <Link to={'/'}>
           <img src={'/logo.png'} alt="" />
         </Link>

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { setSearchActive } from '../redux/Slices/Nav/NavSlices';
 import { ContextType } from './Types';
-import { focusInput } from '../redux/Slices/InputSlice';
 
 const Context = createContext({} as ContextType);
 
@@ -12,14 +11,16 @@ type ChildrenType = {
 };
 
 export const MainContext = ({ children }: ChildrenType) => {
-  const inputRef = useRef(null);
   const dispatch = useDispatch();
   const searchActive = useSelector((state: RootState) => state.nav.searchActive);
-  //   const InputSlice = useSelector((state: RootState) => state.input.inputRef);
 
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const handleInputVisible = () => {
     dispatch(setSearchActive(!searchActive));
-    dispatch(focusInput());
+    setTimeout(() => {
+      inputRef.current?.focus();
+      console.log(inputRef);
+    }, 50);
   };
 
   return (
@@ -27,11 +28,11 @@ export const MainContext = ({ children }: ChildrenType) => {
       value={{
         handleInputVisible,
         searchActive,
+        setSearchActive,
         dispatch,
-
         inputRef,
       }}>
-      {children};
+      {children}
     </Context.Provider>
   );
 };

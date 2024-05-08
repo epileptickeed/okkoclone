@@ -10,6 +10,7 @@
 body {
   background-color: #131313;
   font-family: 'montserrat';
+  color: white;
 }
 
 * {
@@ -48,14 +49,24 @@ body {
     img {
       width: 100px;
     }
+  }
 
+  .linksActive {
+    width: 100%;
     .searchField {
+      width: 100%;
+      position: relative;
       input {
         padding: 0.7rem 2rem;
         background: none;
+        outline: none;
         border: none;
-        width: 100%;
+        min-width: 100%;
         color: white;
+      }
+      svg {
+        position: absolute;
+        top: 20%;
       }
     }
   }
@@ -69,6 +80,7 @@ body {
     .searchBtn {
       cursor: pointer;
       transition: all 0.25s ease;
+      z-index: 1;
       &:hover {
         color: white;
       }

@@ -1,11 +1,11 @@
 import { ActionCreatorWithPayload, UnknownAction } from '@reduxjs/toolkit';
-import React, { Dispatch } from 'react';
+import { Dispatch } from 'react';
 
 export type ContextType = {
   searchActive: boolean;
   dispatch: Dispatch<UnknownAction>;
   setSearchActive: ActionCreatorWithPayload<any, 'nav/setSearchActive'>;
 
-  inputRef: React.MutableRefObject<null>;
+  inputRef: React.MutableRefObject<HTMLInputElement | null>;
   handleInputVisible: () => void;
 };

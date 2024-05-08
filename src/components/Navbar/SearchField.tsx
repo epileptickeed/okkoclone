@@ -1,3 +1,4 @@
+import { CiSearch } from 'react-icons/ci';
 import { UseMainContext } from '../../../Context/MainContext';
 
 const SearchField = () => {
@@ -5,6 +6,7 @@ const SearchField = () => {
 
   return (
     <div className="searchField">
+      <CiSearch size={20} />
       <input type="text" placeholder="Поиск" className="" ref={inputRef} />
     </div>
   );
